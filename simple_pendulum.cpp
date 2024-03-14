@@ -21,7 +21,7 @@ datatd.open("velocity.dat");
         float t =j;
         float theta= cos(omega*t); 
         float theta_dot =-omega* sin(omega*t);
-        float P_i = m*l*theta_dot;
+        float P_i = m*std::pow(l,2)*theta_dot;
          
 
         dataf <<theta<<"\t"<<P_i<<"\n";
