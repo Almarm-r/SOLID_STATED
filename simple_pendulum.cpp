@@ -5,9 +5,10 @@
 
 
 float m = 1;
-float l = 1 ;
+float l = 0.1 ;
 float g= 9.81;
 float omega = sqrt(g/l) ;
+float A = 0.005;
 int main() {
 std::ofstream dataf ;
 std::ofstream datat ;
@@ -19,9 +20,9 @@ datatd.open("velocity.dat");
 
     for (float j=0 ; j<=5 ; j=j+0.05){
         float t =j;
-        float theta= cos(omega*t); 
-        float theta_dot =-omega* sin(omega*t);
-        float P_i = m*std::pow(l,2)*theta_dot;
+        float theta= A *cos(omega*t); 
+        float theta_dot =-omega* A *sin(omega*t);
+        float P_i = m* std::pow(l,2)*theta_dot;
          
 
         dataf <<theta<<"\t"<<P_i<<"\n";
